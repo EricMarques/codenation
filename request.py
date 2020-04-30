@@ -15,3 +15,5 @@ request = requests.get('https://api.codenation.dev/v1/challenge/dev-ps/generate-
 
 # Chama a função 'write_json' passando o arquivo obtido por request
 write_json(request.text)
+
+import decode

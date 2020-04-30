@@ -55,3 +55,5 @@ summary_hash.update(obj['decifrado'].encode('utf-8'))
 
 obj['resumo_criptografico'] = summary_hash.hexdigest()
 write_json(obj['resumo_criptografico'])
+
+import post
