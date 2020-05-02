@@ -8,12 +8,16 @@ def write_json(archive_json):
 		json.dump(json.loads(request.text), json_file, indent = 4)
 
 # Token fornecido pela Codenation
-token = '1158495dddc2bfea5532a710ce71e9b9d5932306'
+token = input('Informe seu token: ')
 
-# Faz uma chamada 'GET' à API passando o token como parâmetro.
-request = requests.get('https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=' + token)
+try:
+	# Faz uma chamada 'GET' à API passando o token como parâmetro.
+	request = requests.get('https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=' + token)
+	
+	# Chama a função 'write_json' passando o arquivo obtido por request
+	write_json(request.text)
 
-# Chama a função 'write_json' passando o arquivo obtido por request
-write_json(request.text)
-
-import decode
+	import decode
+	
+except:
+	print('Token incorreto ou inexistente!')
